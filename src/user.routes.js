@@ -14,13 +14,45 @@ const STATUS = {
   failure: 'NOT OK'
 };
 
-router.get("/ping", (req, res) => {
-    res.status(StatusCodes.OK); // created
-    res.send("Hello pirate!");
-  });
+
+router.get("/all", (req, res) => {
+    const users = userService.getAllUsers(); // call service to get all users
+
+    if (users.length) {
+      return res.status(StatusCodes.OK).send(users);
+    }
+
+    return res.status(StatusCodes.NOT_FOUND).send(
+      {
+        status: STATUS.failure,
+        message: "No users found",
+      }
+    )
+});
+
+router.get("/:id", (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const user = userService.getUser(id);
+
+  if (user) {
+    return res.status(StatusCodes.OK).send(
+      {
+        status: STATUS.success,
+        user,
+      }
+    );
+  }
+
+  return res.status(StatusCodes.NOT_FOUND).send(
+    {
+      status: STATUS.failure,
+      message: `User "${id}" is not found`,
+    }
+  )
+});
   
 // first request to create data
-router.post("/add", (req, res) => {
+router.post("/", (req, res) => {
     const { body: user } = req; // get body of request
   
     const addedUser = userService.addUser(user); // call service to add user
@@ -31,8 +63,8 @@ router.post("/add", (req, res) => {
     }); 
   });
 
-// second request to get data
-router.put("/update/:id", (req, res) => {
+// second request to update data
+router.put("/:id", (req, res) => {
     const { body: user } = req; // get body of request
   
     const id = parseInt(req.params.id, 10); // cast id to integer
@@ -42,7 +74,7 @@ router.put("/update/:id", (req, res) => {
     if (updatedUser) {
         return res.status(StatusCodes.OK).send({
             status: STATUS.success,
-            message: updatedUser,
+            user: updatedUser,
         }); 
     } else {
         return res.status(StatusCodes.NOT_FOUND).send({

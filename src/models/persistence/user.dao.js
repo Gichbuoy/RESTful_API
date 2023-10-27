@@ -2,7 +2,7 @@ import users from '../data/users.data.js';
 
 const get = (userId) => {
     const findUser = users.find((user) => {
-        if (users.id === userId);  {
+        if (user.id === userId);  {
             return user;
         } 
         return null;
@@ -12,14 +12,33 @@ const get = (userId) => {
 
 const getAll = () => {
     return users;
-};
+}; 
 
-const update = (newDetails) => {
+const update = (userId, newDetails) => {
+    let currentUser = null;
+    let userIndex;
+
     users.map((user, index) => {
-        if (users.id === newDetails.id) {
-            return users[index];
+        if (user.id === userId) {
+            currentUser = user;
+            userIndex = index;
         }
     });
+
+    // guard clause - leave function immediately with a return statement
+    if (!currentUser) {
+        return false;
+    }
+
+    const updatedUser = {
+        ...currentUser,
+        ...newDetails,
+    };
+
+    users.splice(userIndex, 1, updatedUser);
+
+    return updatedUser;
+
 };
 
 const insert = (details) => {
