@@ -1,18 +1,9 @@
 import users from '../data/users.data.js';
 
-const get = (userId) => {
-    const findUser = users.find((user) => {
-        if (user.id === userId);  {
-            return user;
-        } 
-        return null;
-    });
-    return findUser;
-}
+const get = (userId) => users.find((user) => user.id === userId);
+        
 
-const getAll = () => {
-    return users;
-}; 
+const getAll = () => users; // explicit return
 
 const update = (userId, newDetails) => {
     let currentUser = null;
@@ -42,7 +33,7 @@ const update = (userId, newDetails) => {
 };
 
 const insert = (details) => {
-    const newUser = { ...details, id: users.length + 1 };
+    const newUser = { id: users.length + 1, ...details};
     users.push(newUser);
 
     return newUser;
@@ -50,13 +41,11 @@ const insert = (details) => {
 
 const remove = (userId) => {
     const deleteUser = (user, index) => {
-        /// if user exists, remove it
-        if (user.id === userId) {
+        // (?.) -> optional chaining
+        if (user?.id === userId) {
             // removes the array element of found user
             users.splice(index, 1);
-            return true;
         }
-        return false;
     };
 
     return users.find(deleteUser);
