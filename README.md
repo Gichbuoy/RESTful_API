@@ -130,11 +130,23 @@ logger.info('log information');
 ```
 
 
+First post request
+
 ![post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post1.png)
+
+Second post request
 ![second post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post2.png)
+
+Third post request
 ![third post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post3.png)
+
+Put request
 ![update request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/put.png)
+
+get all request
 ![get all request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/getall.png)
+
+Delete request
 ![delete](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/delete.png)
 
 
