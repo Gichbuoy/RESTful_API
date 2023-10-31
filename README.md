@@ -7,14 +7,33 @@
 
 
 ## Features
-- User creation, addition, and deletion through API endpoints
+- User creation, editting, getting and deletion through API endpoints
 - Comprehensive API documentation for easy integration with the frontend
 - Unit tests to ensure the reliability and functionality of the API
 - Integration with Insomnia, a user-friendly REST API client for testing API endpoints and development
 
 * Communicate with your backend. HTTP and HTTP methods and codes.
 
-* Validate the input data validation with [yup](https://github.com/jquense/yup) schema validation.
+* Validate the input data validation with [yup](https://github.com/jquense/yup) schema validation. (yup schema validator validates input received from body of API)
+
+* [Helmet](https://github.com/helmetjs/helmet) package to improve the security of API by setting HTTP response headers.
+
+Here is a sample Express app that usees Helmet.
+```
+import express from "express";
+import helmet from "helmet";
+
+const app = express();
+
+// Use Helmet!
+app.use(helmet());
+
+app.get("/", (req, res) => {
+  res.send("Hello world!");
+});
+
+app.listen(8000);
+```
 
 * Request some API endpoints easily
 
@@ -28,14 +47,14 @@
 
 * Calling the CRUD (Create-Read-Update-Delete) endpoints from the client.
 
-* Document the API endpoints.
+* Using API documentation generator [JSDoc](https://github.com/jsdoc/jsdoc) to add documentation to functions. 
 
 
 ## Technologies Used
 * Node.js
 * React
 
-
+# Backend 
 ## Getting Started
 - To get started with the project, follow the steps below to install the necessary dependencies:
 - Ensure that you have [prerequisites such as Node.js or npm] installed on your machine.
@@ -58,6 +77,67 @@ npm install
 ```
 npm start
 ```
+
+## Architectural pattern
+- We used the Model-View-Controller (MVC) framework as an architectural/design pattern that separates an application into three main logical components Model, View, and Controller.
+- It's an architecural pattern on which to build software.
+- Each architectural component is built to handle specific development aspects of an application
+- It separates data models from UI.
+
+![MVC Architectural pattern](https://github.com/Gichbuoy/RESTful_API/screenshot/mvc.jpg)
+1. Controller - API routes and endpoints
+2. Model - For business logic of the data
+3. View - html view for GUI.
+
+
+## API Good Practices Implemented
+1. **Rate Limiter** - Improves quality of your service and server.
+
+Ensure your API can provide optimal service for its users, while also ensuring their safety.
+ Installation
+```
+npm install express-rate-limit
+```
+
+Use
+```
+const limiter = rateLimit({
+    windowMs: 60 * 1000, // 1 minute
+    max: 20, // 100 requests per minute
+});
+
+app.use(limiter);
+```
+
+2. **Compression** - Compresses and minimizes requests of APIs.
+Compresses the size of every requet sent, this saves time rendering everything for our client, and it's faster.
+```
+npm install compression
+```
+
+3. **Logging package** - Logs for server incase something bad happens.
+
+Installation
+```
+npm install pino
+```
+
+Use
+```
+const logger = pino();
+
+logger.info('log information');
+```
+
+
+![post request](https://github.com/Gichbuoy/RESTful_API/screenshot/post1.png)
+![second post request](https://github.com/Gichbuoy/RESTful_API/screenshot/post2.png)
+![third post request](https://github.com/Gichbuoy/RESTful_API/screenshot/post3.png)
+![update request](https://github.com/Gichbuoy/RESTful_API/screenshot/put.png)
+![get all request](https://github.com/Gichbuoy/RESTful_API/screenshot/getall.png)
+![delete](https://github.com/Gichbuoy/RESTful_API/screenshot/delete.png)
+
+
 
 ## Frontend Integration
 
