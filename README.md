@@ -130,23 +130,28 @@ logger.info('log information');
 ```
 
 
-First post request
+- First post request
 
 ![post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post1.png)
 
-Second post request
+- Second post request
+
 ![second post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post2.png)
 
-Third post request
+- Third post request
+
 ![third post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post3.png)
 
-Put request
+- Put request
+
 ![update request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/put.png)
 
-get all request
+- get all request
+
 ![get all request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/getall.png)
 
-Delete request
+- Delete request
+
 ![delete](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/delete.png)
 
 
@@ -174,15 +179,3 @@ This project is licensed under the [MIT](https://github.com/Gichbuoy/RESTful_API
 ## Acknowledgements
 I would like to acknowledge [Wellington-Mwadali](https://github.com/wellingtonmwadali) for working on the frontend part of this project.
 
-
-## Project Folder Structure
-
- src
-      ├── /server.js	# app entry point
-      ├── /api			# controller layer: api routes
-      ├── /config		# Application environment variables
-      ├── /services		Encapsulates all busines logic
-      ├── /models		# data access layer: database models	
-      ├── /loaders		# Handles all startup processes
-      ├── /routes		# Express routes that define API
-      └── /test         # tests suites
