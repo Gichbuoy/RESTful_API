@@ -6,7 +6,7 @@ import userService from "../services/user.service.js";
 const logger = pino();
 
 const STATUS = {
-  success: 'OK',
+  success: 'OK!',
   failure: 'NOT OK'
 };
 
@@ -48,7 +48,7 @@ const getUser = (req, res) => {
     const user = userService.getUser(id);
   
     if (user) {
-      logger.info(`Retrieving user ${id}`);
+      logger.info(`Retrieving user ID ${id}`);
       return res.status(StatusCodes.OK).send(
         {
           status: STATUS.success,
@@ -100,7 +100,7 @@ const updateUser = (req, res) => {
   
 
     if (updatedUser) {
-      logger.info(`User ${id} updated successfully`);
+      logger.info(`User ID ${id} updated successfully`);
         return res.status(StatusCodes.OK).send({
             status: STATUS.success,
             user: updatedUser,
@@ -130,7 +130,7 @@ const removeUser = (req, res) => {
 
     // if found remove user
     if (user) {
-      logger.info(`Removing user ${id}`);
+      logger.info(`Removing user ID ${id}`);
       userService.removeUser(id);
   
       return res.status(StatusCodes.OK).send({
