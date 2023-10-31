@@ -1,35 +1,86 @@
-## RESTFul backend API in NodeJS, with a React frontend client
+## RESTFul Backend Node.js API with React Client
 
-Building a robust RESTFul API with NodeJS based on an efficient professional architecture pattern.
-
-- Plug the API with a frontend client. A client built with the latest React and Bootstrap versions.
-
-
-
-Building a backend API from scratch and building a client that will speak to my API through HTTP protocol.
+### Overview
+- This project involves the development of a backend API using Node.js along with a frontend React client. The API provides: 
+* **CRUD** (Create, Read, Update, Delete) functionality for users. 
+* It also includes **CORS** (Cross-Origin Resource Sharing) to facilitate communication between the frontend and backend.
 
 
 ## Features
+- User creation, addition, and deletion through API endpoints
+- Comprehensive API documentation for easy integration with the frontend
+- Unit tests to ensure the reliability and functionality of the API
+- Integration with Insomnia, a user-friendly REST API client for testing API endpoints and development
+
 * Communicate with your backend. HTTP and HTTP methods and codes.
 
-* Validate the input data validation.
+* Validate the input data validation with (yup)[https://github.com/jquense/yup] schema validation.
 
 * Request some API endpoints easily
 
-* Test the API gradually.
 
-* Design a flexible and solid API architecture.
+* Designed a flexible and solid API architecture.
 
 * Secure and optimize the API professionally (with the packages).
 
 * CORS[Cross-Origin-Resource-Sharing] on the API. 
 
-* Client from scratch with React JS.
 
 * Calling the CRUD (Create-Read-Update-Delete) endpoints from the client.
 
 * Document the API endpoints.
 
+
+## Technologies Used
+Node.js
+React
+
+
+## Getting Started
+- To get started with the project, follow the steps below to install the necessary dependencies:
+- Ensure that you have [prerequisites such as Node.js or npm] installed on your machine.
+
+- Clone or download the project repository to your local machine. You can use the following command to clone the repository:
+```
+git clone https://github.com/Gichbuoy/RESTful_API.git
+```
+- Open a terminal or command prompt and navigate to the project directory:
+```
+cd RESTful_API
+```
+
+- Run the following command to install the project dependencies:
+```
+npm install
+```
+
+- start the application
+```
+npm start
+```
+
+## Frontend Integration
+
+## Contributing
+Contributions to the project are welcome! If you would like to contribute, please follow these guidelines:
+
+* Fork the repository and clone it locally.
+
+* Create a new branch for your feature or bug fix.
+
+* Make your changes and test thoroughly.
+
+* Commit your changes with clear and descriptive commit messages.
+
+* Push your branch to your forked repository.
+
+* Create a pull request with a detailed description of your changes.
+
+## License
+This project is licensed under the (MIT)[https://github.com/Gichbuoy/RESTful_API/LICENSE] License
+
+## Acknowledgements
+I would like to acknowledge (Wellington Mwadali)[https://github.com/wellingtonmwadali] for working on the frontend part of this project.
 
 
 ## Project Folder Structure
