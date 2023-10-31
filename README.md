@@ -10,7 +10,7 @@
 - User creation, editting, getting and deletion through API endpoints
 - Comprehensive API documentation for easy integration with the frontend
 - Unit tests to ensure the reliability and functionality of the API
-- Integration with Insomnia, a user-friendly REST API client for testing API endpoints and development
+- Integration with [**Insomnia**](https://docs.insomnia.rest/insomnia/get-started), a user-friendly REST API client for testing API endpoints and development
 
 * Communicate with your backend. HTTP and HTTP methods and codes.
 
