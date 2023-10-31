@@ -84,7 +84,7 @@ npm start
 - Each architectural component is built to handle specific development aspects of an application
 - It separates data models from UI.
 
-![MVC Architectural pattern](https://github.com/Gichbuoy/RESTful_API/screenshot/mvc.jpg)
+![MVC Architectural pattern](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/mvc.jpg)
 1. Controller - API routes and endpoints
 2. Model - For business logic of the data
 3. View - html view for GUI.
@@ -130,12 +130,12 @@ logger.info('log information');
 ```
 
 
-![post request](https://github.com/Gichbuoy/RESTful_API/screenshot/post1.png)
-![second post request](https://github.com/Gichbuoy/RESTful_API/screenshot/post2.png)
-![third post request](https://github.com/Gichbuoy/RESTful_API/screenshot/post3.png)
-![update request](https://github.com/Gichbuoy/RESTful_API/screenshot/put.png)
-![get all request](https://github.com/Gichbuoy/RESTful_API/screenshot/getall.png)
-![delete](https://github.com/Gichbuoy/RESTful_API/screenshot/delete.png)
+![post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post1.png)
+![second post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post2.png)
+![third post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post3.png)
+![update request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/put.png)
+![get all request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/getall.png)
+![delete](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/delete.png)
 
 
 
