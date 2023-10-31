@@ -15,8 +15,7 @@ const port = 3000;
 
 const limiter = rateLimit({
     windowMs: 60 * 1000, // 1 minute
-    max: 100, // 100 requests per minute
-    message: 'Too many requests',
+    max: 20, // 100 requests per minute
 });
 
 app.use(compression()); // Compress all HTTP responses

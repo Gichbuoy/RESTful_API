@@ -1,11 +1,15 @@
 import { StatusCodes } from "http-status-codes";
+import pino from "pino";
 
 import userService from "../services/user.service.js";
+
+const logger = pino();
 
 const STATUS = {
   success: 'OK',
   failure: 'NOT OK'
 };
+
 
 /**
  * getAllUsers - Retrieve all users
@@ -18,6 +22,7 @@ const getAllUsers = (req, res) => {
     const users = userService.getAllUsers(); // call service to get all users
 
     if (users.length) {
+      logger.info('Retrieving all users');
       return res.status(StatusCodes.OK).send(users);
     }
 
@@ -29,6 +34,8 @@ const getAllUsers = (req, res) => {
     );
 };
 
+
+
 /**
  * getUser - Retrieve a user
  * @param: req request
@@ -36,13 +43,12 @@ const getAllUsers = (req, res) => {
  * @returns: if user found, return status code OK,
  * else return status code NOT_FOUND if user id is not found 
  */
-
-
 const getUser = (req, res) => {
     const id = parseInt(req.params.id, 10);
     const user = userService.getUser(id);
   
     if (user) {
+      logger.info(`Retrieving user ${id}`);
       return res.status(StatusCodes.OK).send(
         {
           status: STATUS.success,
@@ -70,6 +76,8 @@ const addUser = (req, res) => {
   
     const addedUser = userService.addUser(user); // call service to add user
   
+    logger.info('User added successfully');
+
     return res.status(StatusCodes.CREATED).send({
       status: STATUS.success,
       user: addedUser,
@@ -90,11 +98,14 @@ const updateUser = (req, res) => {
 
     const updatedUser = userService.updateUser(id, user); // call service to update user
   
+
     if (updatedUser) {
+      logger.info(`User ${id} updated successfully`);
         return res.status(StatusCodes.OK).send({
             status: STATUS.success,
             user: updatedUser,
         }); 
+
     } else {
         return res.status(StatusCodes.NOT_FOUND).send({
             status: STATUS.failure,
@@ -115,14 +126,19 @@ const removeUser = (req, res) => {
   
     const id = parseInt(params.id);
     const user = userService.getUser(id); // check if user has been found
+    
+
     // if found remove user
     if (user) {
+      logger.info(`Removing user ${id}`);
       userService.removeUser(id);
   
       return res.status(StatusCodes.OK).send({
         status: STATUS.success,
         message: `User "${id}" is deleted`,
       }); 
+      
+
     } else {
       return res.status(StatusCodes.NOT_FOUND).send({
         status: STATUS.failure,
