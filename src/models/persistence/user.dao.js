@@ -5,6 +5,13 @@ const get = (userId) => users.find((user) => user.id === userId);
 
 const getAll = () => users; // explicit return
 
+/**
+ * update - Updates a user
+ * @param: {integer} userId
+ * @param: {object} newDetails 
+ * 
+ * @returns: updated user
+ */
 const update = (userId, newDetails) => {
     let currentUser = null;
     let userIndex;
@@ -32,6 +39,11 @@ const update = (userId, newDetails) => {
 
 };
 
+/**
+ * insert - Insert a user
+ * @param: {object} details 
+ * @returns: new user
+ */
 const insert = (details) => {
     const newUser = { id: users.length + 1, ...details};
     users.push(newUser);
@@ -39,6 +51,11 @@ const insert = (details) => {
     return newUser;
 }
 
+/**
+ * remove - deletes a user by its ID
+ * @param: {integer} userId 
+ * @returns: deleted user
+ */
 const remove = (userId) => {
     const deleteUser = (user, index) => {
         // (?.) -> optional chaining

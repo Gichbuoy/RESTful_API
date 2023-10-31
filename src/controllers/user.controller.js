@@ -3,10 +3,17 @@ import { StatusCodes } from "http-status-codes";
 import userService from "../services/user.service.js";
 
 const STATUS = {
-    success: 'OK',
-    failure: 'NOT OK'
+  success: 'OK',
+  failure: 'NOT OK'
 };
 
+/**
+ * getAllUsers - Retrieve all users
+ * @param: req request
+ * @param: res response
+ * @returns: if users found, return status code OK,
+ *  else return status code NOT_FOUND
+ */
 const getAllUsers = (req, res) => {
     const users = userService.getAllUsers(); // call service to get all users
 
@@ -21,6 +28,14 @@ const getAllUsers = (req, res) => {
       }
     );
 };
+
+/**
+ * getUser - Retrieve a user
+ * @param: req request
+ * @param: res response
+ * @returns: if user found, return status code OK,
+ * else return status code NOT_FOUND if user id is not found 
+ */
 
 
 const getUser = (req, res) => {
@@ -44,7 +59,12 @@ const getUser = (req, res) => {
     );
 };
 
-
+/**
+ * addUser - Adds a user
+ * @param: req request
+ * @param: res response
+ * @returns: status code CREATED 
+ */
 const addUser = (req, res) => {
     const { body: user } = req; // get body of request
   
@@ -56,7 +76,13 @@ const addUser = (req, res) => {
     });
 };
 
-
+/**
+ * updateUser - Update a user
+ * @param: req request
+ * @param: res response
+ * @returns: updated user with status code OK,
+ * else return status code NOT_FOUND if user id is not found
+ */
 const updateUser = (req, res) => {
     const { body: user } = req; // get body of request
   
@@ -77,7 +103,13 @@ const updateUser = (req, res) => {
     }
 };
 
-
+/**
+ * removeUser - Remove a user
+ * @param: req request
+ * @param: res response
+ * @returns: status code OK if user is found and deleted,
+ * else return status code NOT_FOUND if user id is not found
+ */
 const removeUser = (req, res) => {
     const { params } = req;
   
