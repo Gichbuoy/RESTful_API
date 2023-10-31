@@ -14,7 +14,7 @@
 
 * Communicate with your backend. HTTP and HTTP methods and codes.
 
-* Validate the input data validation with [https://github.com/jquense/yup](yup) schema validation.
+* Validate the input data validation with [yup](https://github.com/jquense/yup) schema validation.
 
 * Request some API endpoints easily
 
@@ -77,10 +77,10 @@ Contributions to the project are welcome! If you would like to contribute, pleas
 * Create a pull request with a detailed description of your changes.
 
 ## License
-This project is licensed under the [https://github.com/Gichbuoy/RESTful_API/blob/main/LICENSE](MIT) License
+This project is licensed under the [MIT](https://github.com/Gichbuoy/RESTful_API/blob/main/LICENSE) License
 
 ## Acknowledgements
-I would like to acknowledge [https://github.com/wellingtonmwadali](Wellington-Mwadali) for working on the frontend part of this project.
+I would like to acknowledge [Wellington-Mwadali](https://github.com/wellingtonmwadali) for working on the frontend part of this project.
 
 
 ## Project Folder Structure
