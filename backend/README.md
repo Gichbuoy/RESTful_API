@@ -80,7 +80,7 @@ npm start
 
 ## Architectural pattern
 - We used the Model-View-Controller (MVC) framework as an architectural/design pattern that separates an application into three main logical components Model, View, and Controller.
-- It's an architecural pattern on which to build software.
+- It's an architectural pattern on which to build software.
 - Each architectural component is built to handle specific development aspects of an application
 - It separates data models from UI.
 
