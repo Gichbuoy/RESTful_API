@@ -84,7 +84,7 @@ npm start
 - Each architectural component is built to handle specific development aspects of an application
 - It separates data models from UI.
 
-![MVC Architectural pattern](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/mvc.jpg)
+![MVC Architectural pattern](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/mvc.jpg)
 1. Controller - API routes and endpoints
 2. Model - For business logic of the data
 3. View - html view for GUI.
@@ -130,29 +130,29 @@ logger.info('log information');
 ```
 
 
-- First post request
+- First POST request
 
-![post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post1.png)
+![post request](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/post1.png)
 
-- Second post request
+- Second POST request
 
-![second post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post2.png)
+![second post request](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/post2.png)
 
-- Third post request
+- Third POST request
 
-![third post request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/post3.png)
+![third post request](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/post3.png)
 
-- Put request
+- PUT request
 
-![update request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/put.png)
+![update request](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/put.png)
 
-- get all request
+- GET all request
 
-![get all request](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/getall.png)
+![get all request](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/getall.png)
 
-- Delete request
+- DELETE request
 
-![delete](https://github.com/Gichbuoy/RESTful_API/blob/main/screenshot/delete.png)
+![delete](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/delete.png)
 
 
 
@@ -171,5 +171,3 @@ Contributions to the project are welcome! If you would like to contribute, pleas
 * Push your branch to your forked repository.
 
 * Create a pull request with a detailed description of your changes.
-
-
