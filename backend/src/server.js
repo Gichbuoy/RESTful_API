@@ -11,7 +11,7 @@ import mainRoutes from './main.routes.js';
 
 // first endpoint
 const app = express();
-const port = 3000;
+const port = 4000;
 
 const limiter = rateLimit({
     windowMs: 60 * 1000, // 1 minute
