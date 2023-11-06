@@ -1,7 +1,14 @@
+import { Container } from "react-bootstrap";
+import ReadUsers from "./components/readUsers";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export default () =>{
   return (
-    <div className="App">
-    </div>
+    <>
+    <Container fluid>
+      <ReadUsers/>
+    </Container>
+    </>
   );
 }
 
