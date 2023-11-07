@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Col, Form, Row ,Container} from "react-bootstrap";
+import axios from "axios";
 
 const CreateUser = () => {
     const CreateUsersUrl = "http://localhost:4000/v1/user/all";
@@ -13,7 +14,7 @@ const CreateUser = () => {
     const submitForm = async (event) => {
         event.preventDefault();
 
-        const createUserPayload = {
+        const payload = {
             name,
             email,
             city,
