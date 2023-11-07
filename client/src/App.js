@@ -1,7 +1,9 @@
 import { Container } from "react-bootstrap";
 import UserList from "./components/UserList";
+import ReadUsers from './components/readUsers';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {createGlobalStyle} from 'styled-components';
+
 
 const BackgroundColor = createGlobalStyle `
 body{
