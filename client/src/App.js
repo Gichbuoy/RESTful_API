@@ -1,12 +1,20 @@
 import { Container } from "react-bootstrap";
-import ReadUsers from "./components/readUsers";
+import UserList from "./components/UserList";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {createGlobalStyle} from 'styled-components';
 
-export default () =>{
+const BackgroundColor = createGlobalStyle `
+body{
+  background-color: #f2f2f2;
+}
+`;
+
+export default () => {
   return (
     <>
-    <Container fluid>
-      <ReadUsers/>
+    <BackgroundColor/>
+    <Container fluid className="mt-5">
+      <UserList/>
     </Container>
     </>
   );
