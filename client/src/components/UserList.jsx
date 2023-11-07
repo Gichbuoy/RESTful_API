@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Container, Card } from 'react-bootstrap';
-import axios from "axios"
+import axios from "axios";
 
 const UserList = () => {
     const getAllUsersUrl = "http://localhost:4000/v1/user/all";
