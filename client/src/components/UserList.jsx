@@ -7,20 +7,14 @@ const UserList = () => {
     const [users, setUsers] = useState({});
 
     const fetchUsers = async () => {
-        const res = await axios.get(`${getAllUsersUrl}`);
-        console.log(res.data)
-        setUsers(res.data)
-    }
+        const { data: apiResponse } = await axios.get(`${getAllUsersUrl}`);
+        
+        setUsers(apiResponse);
+    };
 
     useEffect(() => {
         fetchUsers();
-    }, [])
-    const renderedUsers = Object.values(users).map(user => {
-        return (
-            <>
-            </>
-        )
-    });
+    }, []);
     //Return results for rendered users
 
     return (
