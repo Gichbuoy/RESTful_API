@@ -49,12 +49,7 @@ const getUser = (req, res) => {
   
     if (user) {
       logger.info(`Retrieving user ID ${id}`);
-      return res.status(StatusCodes.OK).send(
-        {
-          status: STATUS.success,
-          user,
-        }
-      );
+      return res.status(StatusCodes.OK).send(user);
     }
   
     return res.status(StatusCodes.NOT_FOUND).send(

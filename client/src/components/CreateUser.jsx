@@ -105,7 +105,7 @@ const CreateUser = () => {
                 </Col>
             </Row>
         </Container>
-    )
+    );
 }
 
-export default CreateUser
+export default CreateUser;
