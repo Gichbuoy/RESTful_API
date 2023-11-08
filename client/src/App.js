@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {createGlobalStyle} from 'styled-components';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css"
 
 const BackgroundColor = createGlobalStyle `
 body{
@@ -16,9 +17,10 @@ body{
 const App = () => {
   return (
     <>
-      <BackgroundColor light />
-      <Container fluid className="mt-4 mt-3">
-        <ToastContainer />
+      <BackgroundColor />
+      <Container fluid className="mt-5">
+        <ToastContainer/>
+
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<UserList />} />
@@ -29,6 +31,7 @@ const App = () => {
       </Container>
     </>
   );
-};
+}
+
 
 export default App;
