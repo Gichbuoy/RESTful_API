@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Col, Form, Row ,Container} from "react-bootstrap";
+import { Button, Col, Form, Row} from "react-bootstrap";
 import { toast } from "react-toastify";
-
+import Layout from './Layout';
 import axios from "axios";
 
 const CreateUser = () => {
@@ -59,7 +59,7 @@ const CreateUser = () => {
         }
     };
     return (
-        <Container className="mb-5">
+        <Layout>
             <Row className="justify-content-center">
                 <Col lg={6}>
                     <Form>
@@ -104,7 +104,7 @@ const CreateUser = () => {
                     </Form>
                 </Col>
             </Row>
-        </Container>
+        </Layout>
     );
 }
 
