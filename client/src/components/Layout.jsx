@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { ToastContainer } from 'react-toastify';
 import { createGlobalStyle } from 'styled-components';
+import TopNavigation from './TopNavigation';
 
 const BackgroundColor = createGlobalStyle`
     body {

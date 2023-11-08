@@ -3,7 +3,7 @@ import { Nav, Container, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 
-const NavBar = () => {
+const TopNavigation = () => {
   return (
     <>
     <Navbar sticky="top" bg="light" variant="light" className="mb-4">
@@ -22,4 +22,4 @@ const NavBar = () => {
 );
 }
 
-export default NavBar
+export default TopNavigation
