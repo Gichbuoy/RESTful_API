@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Container, Card } from 'react-bootstrap';
+import { Row, Col,Card } from 'react-bootstrap';
 import axios from "axios";
+import Layout from './Layout';
 
 const UserList = () => {
     const getAllUsersUrl = "http://localhost:4000/v1/user/all";
@@ -15,10 +16,11 @@ const UserList = () => {
     useEffect(() => {
         fetchUsers();
     }, []);
-    //Return results for rendered users
+    
+//Return results for users
 
     return (
-        <Container className='mt-5 mb-5'>
+        <Layout>
             <h3 className='text-center mb-3'>Users</h3>
             {Object.values(users).map(user => (
                 <Row className='justify-content-center'>
@@ -35,7 +37,7 @@ const UserList = () => {
                     </Col>
                 </Row>
             ))}
-        </Container>
+        </Layout>
     )
 }
 export default UserList;
