@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Button, Col, Form, Row ,Container} from "react-bootstrap";
+import { toast } from "react-toastify";
+
 import axios from "axios";
 
 const CreateUser = () => {
-    const CreateUsersUrl = "http://localhost:4000/v1/user/all";
+    const createUsersEndpoint = "http://localhost:4000/v1/user/";
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -21,16 +23,39 @@ const CreateUser = () => {
             country,
         };
         try {
-            const res = await axios.post(`${CreateUsersUrl}`, payload);
+            const res = await axios.post(`${createUsersEndpoint}`, payload);
             //optional chaining operation
-            if (res.data?.status === "OK") {
+            if (res.data?.status) {
+
+                toast.success("User successfully created!");
+                // Clear states
+                setName("");
+                setEmail("");
+                setCity("");
+                setCountry("");
+
 
             } else {
                 //give error message
+                toast.warn("Failed to load data ")
             }
 
-        } catch (err) {
-            //something is wrong    
+        } catch (error) {
+            //something is wrong  
+            const getErrorMessage = () => {
+                const {
+                    data: {
+                      errors: { body },
+                    },
+                  } = error.response;
+          
+                  const message = body[0]?.message;
+          
+                // Uppercase the first letter of the message
+                  return message[0].toUpperCase() + message.substring(1)
+            };
+      
+            toast.error(getErrorMessage());
         }
     };
     return (
