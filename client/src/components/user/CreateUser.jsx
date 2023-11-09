@@ -3,6 +3,7 @@ import * as userService from '../../services/user.service';
 import React, { useState } from "react";
 import { Button, Col, Form, Row} from "react-bootstrap";
 import { toast } from "react-toastify";
+import { firstUpperCase } from "../../helpers/string.helper";
 
 const CreateUser = () => {
 
@@ -54,7 +55,7 @@ const CreateUser = () => {
                   const message = body[0]?.message;
           
                 // Uppercase the first letter of the message
-                  return message[0].toUpperCase() + message.substring(1)
+                return firstUpperCase(message);
             };
       
             toast.error(getErrorMessage());

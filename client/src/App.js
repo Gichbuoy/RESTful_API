@@ -1,6 +1,7 @@
 import UserList from "./components/user/UserList";
 import CreateUser from "./components/user/CreateUser";
 import RetrieveUser from "./components/user/RetrieveUser";
+import EditUser from "./components/user/EditUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.min.css"
@@ -13,7 +14,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<UserList />} />
           <Route path="/create" element={<CreateUser />} />
-            <Route path="/:userId" element={<RetrieveUser />} />
+          <Route path="/:userId" element={<RetrieveUser />} />
+          <Route path="/edit/:userId" element={<EditUser />} />
         </Routes>
       </BrowserRouter>
     </>
