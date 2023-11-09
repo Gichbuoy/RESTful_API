@@ -1,6 +1,7 @@
 import UserList from "./components/user/UserList";
 import CreateUser from "./components/user/CreateUser";
 import RetrieveUser from "./components/user/RetrieveUser";
+import RemoveUser from "./components/user/RemoveUser";
 import EditUser from "./components/user/EditUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/" element={<UserList />} />
           <Route path="/create" element={<CreateUser />} />
           <Route path="/:userId" element={<RetrieveUser />} />
+          <Route path="/remove/:userId" element={<RemoveUser />} />
           <Route path="/edit/:userId" element={<EditUser />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<AboutUs />} />
