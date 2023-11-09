@@ -5,6 +5,8 @@ import EditUser from "./components/user/EditUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.min.css"
+import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 
 
 const App = () => {
@@ -16,6 +18,9 @@ const App = () => {
           <Route path="/create" element={<CreateUser />} />
           <Route path="/:userId" element={<RetrieveUser />} />
           <Route path="/edit/:userId" element={<EditUser />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<AboutUs />} />
+
         </Routes>
       </BrowserRouter>
     </>
