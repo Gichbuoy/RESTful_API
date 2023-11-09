@@ -13,6 +13,13 @@ export const createUser = async (payload) => {
     return apiResponse;
 };
 
+export const EditUser = async (userId, payload ) => {
+    const editUsersEndpoint = `${baseApiUrl}/v1/user/${userId}`;
+
+    const { data: apiResponse } = await axios.put(editUsersEndpoint, payload);
+    return apiResponse;
+};
+
 
 // retrieve user
 export const retrieveUser = async (userId) => {
