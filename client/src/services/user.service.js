@@ -7,7 +7,7 @@ export const createUser = async (payload) => {
     const createUsersEndpoint = `${baseApiUrl}/v1/user`;
 
     const { data: apiResponse } = await axios.post(
-        `${createUsersEndpoint}`,
+        createUsersEndpoint,
         payload
     );
     return apiResponse;
@@ -18,7 +18,7 @@ export const createUser = async (payload) => {
 export const retrieveUser = async (userId) => {
     const getUserEndpoint = `${baseApiUrl}/v1/user/${userId}`;
 
-    const { data: apiResponse } = await axios.get(`${getUserEndpoint}`);
+    const { data: apiResponse } = await axios.get(getUserEndpoint);
 
     return apiResponse;
 };
@@ -28,7 +28,15 @@ export const retrieveUser = async (userId) => {
 export const retrieveAllUsers = async () => {
     const getAllUsersEndpoint = `${baseApiUrl}/v1/user/all`;
 
-    const { data: apiResponse } = await axios.get(`${getAllUsersEndpoint}`);
+    const { data: apiResponse } = await axios.get(getAllUsersEndpoint);
 
+    return apiResponse;
+};
+
+export const removeUser = async (userId) => {
+    const removeUserEndpoint = `${baseApiUrl}/v1/user/${userId}`;
+
+    const { data: apiResponse } = await axios.delete(removeUserEndpoint);
+    
     return apiResponse;
 };
