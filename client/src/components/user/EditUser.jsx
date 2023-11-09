@@ -15,7 +15,7 @@ const EditUser = () => {
     
     const populateUserFields = async () => {
     try {   
-    const user = userService.retrieveUser(userId);
+    const user = await userService.retrieveUser(userId);
     setName(user.name);
     setEmail(user.email);
     setCity(user.city);
@@ -56,7 +56,11 @@ const EditUser = () => {
 
               toast.error(retrieveErrorMessage());
         }
-    }
+    };
+    useEffect(() => {
+      populateUserFields();
+    }, [userId]);
+  
     return(
         <Layout>
         <h3 className="text-center">Edit User</h3>
