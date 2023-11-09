@@ -2,7 +2,7 @@ import Layout from "../layout/Layout";
 import { useParams } from "react-router-dom";
 import * as userService from "../../services/user.service";
 import { toast } from "react-toastify";
-import { Button } from "react-bootstrap";
+import { Button, Row, Form, Col } from "react-bootstrap";
 
 const RemoveUser = () => {
     const DELAY_BEFORE_REDIRECTION_MS = 1000;
@@ -35,13 +35,22 @@ const RemoveUser = () => {
 
     return (
         <Layout>
-            <Button variant='danger' onClick={submitAction} className='m1'>
-                Remove user
-            </Button>
+            <h4 className="text-center">
+                Are you sure you want to remove this user #{userId}?
+            </h4>
+            <Row className="justify-content-md-center">
+                <Col md={4}>
+                    <Form className="mt-4">
+                        <Button variant='danger' onClick={submitAction} className='m-1'>
+                            Remove user
+                        </Button>
 
-            <Button variant='primary' onClick={cancelAction} className='m-1'>
-                Cancel
-            </Button>
+                        <Button variant='primary' onClick={cancelAction} className='m-1'>
+                            Cancel
+                        </Button>
+                    </Form>
+                </Col>
+            </Row>
         </Layout>
     )
 };
