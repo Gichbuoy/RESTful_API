@@ -1,7 +1,8 @@
 import Layout from '../layout/Layout';
 import * as userService from '../../services/user.service';
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const UserList = () => {
     const [users, setUsers] = useState({});
@@ -22,7 +23,7 @@ const UserList = () => {
         <Layout>
             <h3 className='text-center mb-3'>Users</h3>
             {Object.values(users).map(user => (
-                <Row className='justify-content-center'>
+                <Row key={user.id} className='justify-content-center'>
                     <Col lg={4}>
                         <Card>
                             <Card.Body>
@@ -31,6 +32,8 @@ const UserList = () => {
                                 {user.city && user.country && (
                                     <p>{user.city} - {user.country}</p>
                                 )}
+                                <Button variant = "primary" as = {NavLink} to = {`/edit/${user.id}`}>
+                                    Edit User </Button>
                             </Card.Body>
                         </Card>
                     </Col>
