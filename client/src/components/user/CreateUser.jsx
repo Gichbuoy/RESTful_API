@@ -1,11 +1,10 @@
+import Layout from '../layout/Layout';
+import * as userService from '../../services/user.service';
 import React, { useState } from "react";
 import { Button, Col, Form, Row} from "react-bootstrap";
 import { toast } from "react-toastify";
-import Layout from './Layout';
-import axios from "axios";
 
 const CreateUser = () => {
-    const createUsersEndpoint = "http://localhost:4000/v1/user/";
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -22,12 +21,15 @@ const CreateUser = () => {
             city,
             country,
         };
+        
         try {
-            const res = await axios.post(`${createUsersEndpoint}`, payload);
+            const response = await userService.createUser(payload);
+            
             //optional chaining operation
-            if (res.data?.status) {
+            if (response?.status) {
+                const getUserId = response?.user?.id;
 
-                toast.success("User successfully created!");
+                toast.success(`User ${getUserId} successfully created!`);
                 // Clear states
                 setName("");
                 setEmail("");
