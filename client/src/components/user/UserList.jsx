@@ -3,14 +3,29 @@ import * as userService from '../../services/user.service';
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { List } from 'react-content-loader';
 
 const UserList = () => {
     const [users, setUsers] = useState({});
+    const [errorMessage, setErrorMessage] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchUsers = async () => {
-        const users = await userService.retrieveAllUsers();
+        try {
+            setIsLoading(true);
+            const users = await userService.retrieveAllUsers();
+            setUsers(users);
+        } catch (error) {
+            const retrieveErrorMessage = () => {
+                const apiErrorMessage = error?.response?.data?.message;
         
-        setUsers(users);
+                // Null Coalescing Operator
+                return apiErrorMessage ?? 'Error while connecting to the server';
+              };
+              setErrorMessage(retrieveErrorMessage());
+            } finally {
+              setIsLoading(false); // At this stage, we can stop the loader
+            }
     };
 
     useEffect(() => {
@@ -21,6 +36,14 @@ const UserList = () => {
 
     return (
         <Layout>
+               {isLoading ? (
+        <div className='text-center'>
+          <List />
+        </div>
+      ) : errorMessage ? (
+        <h3 className='text-center text-danger fw-bold'>{errorMessage}</h3>
+      ) : (
+      <>
             <h3 className='text-center mb-3'>Users</h3>
             {Object.values(users).map(user => (
                 <Row key={user.id} className='justify-content-center'>
@@ -39,6 +62,8 @@ const UserList = () => {
                     </Col>
                 </Row>
             ))}
+            </>
+      )}
         </Layout>
     )
 }
