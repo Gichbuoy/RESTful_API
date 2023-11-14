@@ -11,6 +11,8 @@ import AboutUs from "./pages/AboutUs";
 
 
 const App = () => {
+
+  //Project's routes
   return (
     <>
       <BrowserRouter>

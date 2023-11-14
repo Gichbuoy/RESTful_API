@@ -28,7 +28,7 @@ const EditUser = () => {
     }
     const submitForm = async (event) => {
         event.preventDefault();
-    
+    //user schema
         const payload = {
           name,
           email,
@@ -38,7 +38,7 @@ const EditUser = () => {
         try {
             const response = await userService.EditUser(userId, payload)
            if(response?.status){
-            toast.success("User has succesfully been updated!")
+            toast.success("User has succesfully been updated!") //success
            }else{
             toast.warn("The user could not be updated")
            }
@@ -54,7 +54,7 @@ const EditUser = () => {
                 return firstUpperCase(errorMessage);
               };
 
-              toast.error(retrieveErrorMessage());
+              toast.error(retrieveErrorMessage());//incase of error from server
         }
     };
     useEffect(() => {
@@ -62,6 +62,7 @@ const EditUser = () => {
     }, [userId]);
   
     return(
+      //Edit user schema in form
         <Layout>
         <h3 className="text-center">Edit User</h3>
         <Row className="justify-content-center">

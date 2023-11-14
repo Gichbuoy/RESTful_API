@@ -5,6 +5,7 @@ const Contact = () => {
     const email1 = 'wellingtonmwadali@gmail.com';
     const email2 = 'lexizgichbuoy@gmail.com';
   return (
+    //Showcase project authors' contact details
     <Layout>
       <h3 className="text-center">Contact Us</h3>
       <Row className="justify-content-center">

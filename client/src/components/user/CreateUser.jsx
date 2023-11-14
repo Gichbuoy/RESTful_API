@@ -12,10 +12,9 @@ const CreateUser = () => {
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
 
-    //submit form 
     const submitForm = async (event) => {
         event.preventDefault();
-
+//user schema
         const payload = {
             name,
             email,
@@ -62,6 +61,7 @@ const CreateUser = () => {
         }
     };
     return (
+        //Add new user in form 
         <Layout>
             <Row className="justify-content-center">
                 <Col lg={6}>

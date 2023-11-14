@@ -2,6 +2,7 @@ import Layout from "../components/layout/Layout";
 import { Col, Row } from "react-bootstrap";
 
 const AboutUs = () => {
+  //Showcase project authors
   return (
     <Layout>
       <h3 class="text-center">About Us</h3>

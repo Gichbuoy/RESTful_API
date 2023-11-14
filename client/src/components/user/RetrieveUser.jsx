@@ -21,7 +21,7 @@ const RetrieveUser = () => {
     useEffect(() => {
         fetchUser();
     }, [userId]);
-    
+    //Retrieve list of created users or error message
     return (
         <Layout>
             {user ? (
