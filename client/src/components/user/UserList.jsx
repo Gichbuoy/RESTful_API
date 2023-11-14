@@ -19,7 +19,7 @@ const UserList = () => {
             const retrieveErrorMessage = () => {
                 const apiErrorMessage = error?.response?.data?.message;
         
-                // Null Coalescing Operator
+                // Null Operator - when have no values in client
                 return apiErrorMessage ?? 'Error while connecting to the server';
               };
               setErrorMessage(retrieveErrorMessage());
@@ -32,9 +32,8 @@ const UserList = () => {
         fetchUsers();
     }, []);
     
-//Return results for users
-
-    return (
+//Retrieve users if present or error message
+   return (
         <Layout>
                {isLoading ? (
         <div className='text-center'>
