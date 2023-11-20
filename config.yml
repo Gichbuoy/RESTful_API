@@ -1,0 +1,17 @@
+website:
+name: "Restful Api"
+version: 1.0
+url: "https://restfull-api.netlify.app"
+port: 3000
+
+server:
+backend:
+port: 80
+protocol: "http"
+maintenance_mode: false
+
+features:
+-create users
+-get users
+-modify users
+-delete users
