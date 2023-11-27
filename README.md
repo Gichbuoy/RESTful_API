@@ -2,6 +2,7 @@
 
 ### Overview
 - This project involves the development of a backend API using Node.js along with a frontend React client.
+- Read the blog about this project on [Medium](https://medium.com/@lexizgichbuoy/building-a-robust-node-js-api-with-react-frontend-a-backend-engineers-journey-0fcbb8f34fa0)
 
 - The API will be plugged to our frontend client, that will speak to the API through HTTP protocol. 
 
