@@ -38,12 +38,12 @@
 
 - Created Users
 
-![post request](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/allUsers.png)
+![post request](https://github.com/Gichbuoy/RESTful_API/blob/Alex/backend/screenshot/allUsers.png)
 
 
 - Edit User 
 
-![post request](https://github.com/Gichbuoy/RESTful_API/blob/main/backend/screenshot/editUser.png)
+![post request](https://github.com/Gichbuoy/RESTful_API/blob/Alex/backend/screenshot/editUser.png)
 
 
 
