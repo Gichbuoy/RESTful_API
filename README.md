@@ -37,6 +37,14 @@
 
 * Addition of pages using [React-Router-Dom](https://github.com/remix-run/react-router)
 
+- Created Users
+
+![post request](https://github.com/Gichbuoy/RESTful_API/blob/Alex/backend/screenshot/allUsers.png)
+
+
+- Edit User 
+
+![post request](https://github.com/Gichbuoy/RESTful_API/blob/Alex/backend/screenshot/editUser.png)
 
 
 
